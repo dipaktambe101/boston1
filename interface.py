@@ -33,6 +33,7 @@ def predicted_price():
 
             price = BostonDataPrice(CRIM,ZN,INDUS,CHAS,NOX,RM,AGE,DIS,RAD,TAX,PTRATIO,B,LSTAT)
             charges = price.get_predicted_price()
+            price.database_fun()
             return  render_template('test.html',prediction = charges)
         else:
             data = request.args.get
@@ -54,6 +55,8 @@ def predicted_price():
             
             price = BostonDataPrice(CRIM,ZN,INDUS,CHAS,NOX,RM,AGE,DIS,RAD,TAX,PTRATIO,B,LSTAT)
             charges = price.get_predicted_price()
+            
+            price.database_fun()
             return  render_template('test.html',prediction = charges)
 
             
